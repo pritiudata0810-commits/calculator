@@ -1,0 +1,172 @@
+================================================================================
+CALCULATOR TEST SETUP - QUICK REFERENCE
+================================================================================
+
+🎯 QUICK START
+--------------
+Open Windows Command Prompt and run:
+  py D:\calculator\calculator\final_test_setup.py
+
+This will create:
+  ✓ D:\calculator\calculator\tests\ (directory)
+  ✓ D:\calculator\calculator\tests\__init__.py (0 bytes)
+  ✓ D:\calculator\calculator\tests\test_calculator.py (3822 bytes)
+
+================================================================================
+AVAILABLE SETUP SCRIPTS
+================================================================================
+
+PRIMARY (Pick ONE):
+  final_test_setup.py ........... Main setup script
+  setup_minimal.py .............. Minimal setup (no external deps)
+
+ALTERNATIVE:
+  execute_final_setup.py ........ Alternative execution method
+  test_init.py .................. Auto-init module (imported by conftest)
+  setup_and_verify.py ........... Setup with detailed verification
+
+VERIFICATION:
+  verify_setup.py ............... Verify test structure exists
+
+CONFIGURATION:
+  conftest.py ................... Pytest config (auto-creates tests)
+
+================================================================================
+STEP-BY-STEP EXECUTION
+================================================================================
+
+STEP 1: Open Command Prompt
+  Press: Win + R
+  Type:  cmd
+  Press: Enter
+
+STEP 2: Navigate to calculator directory
+  cd D:\calculator\calculator
+
+STEP 3: Execute one of these commands:
+
+  Option A (Recommended):
+    py final_test_setup.py
+  
+  Option B:
+    python final_test_setup.py
+  
+  Option C:
+    python3 final_test_setup.py
+  
+  Option D (Minimal):
+    py setup_minimal.py
+
+STEP 4: Review the output
+  The script will:
+  - Create the tests directory
+  - Create __init__.py
+  - Create test_calculator.py
+  - Display file sizes and verification
+
+STEP 5: Run tests (optional)
+  pytest
+  pytest -v
+  pytest --cov=calculator
+
+================================================================================
+EXPECTED OUTPUT (All scripts produce same result)
+================================================================================
+
+✓ Created directory: D:\calculator\calculator\tests
+✓ Created file: __init__.py
+✓ Created file: test_calculator.py
+
+======================================================================
+VERIFICATION - Directory Contents with File Sizes
+======================================================================
+
+Directory Path: D:\calculator\calculator\tests
+
+Filename                       Size (bytes)        Path
+--------------------------------------------------------------------------------
+__init__.py                    0                   D:\calculator\calculator\tests\__init__.py
+test_calculator.py             3822                D:\calculator\calculator\tests\test_calculator.py
+
+======================================================================
+SUMMARY
+======================================================================
+Total files created: 2
+Total size: 3822 bytes
+Directory exists: True
+Directory is readable: True
+Directory is writable: True
+
+✓ Test directory structure created successfully!
+
+================================================================================
+TEST CASES CREATED
+================================================================================
+
+test_calculator.py contains 10 test methods:
+
+  test_add_positive_numbers() ........... Tests 2+3=5, 0+5=5, 100+50=150
+  test_add_negative_numbers() ........... Tests -2+3=1, -5+-5=-10, -10+20=10
+  test_subtract_positive_numbers() ..... Tests 5-3=2, 10-10=0, 100-50=50
+  test_subtract_negative_numbers() ..... Tests -5-(-3)=-2, 5-(-3)=8, -5-3=-8
+  test_multiply_positive_numbers() ..... Tests 2*3=6, 5*0=0, 10*10=100
+  test_multiply_negative_numbers() ..... Tests -2*3=-6, -5*-5=25, -1*100=-100
+  test_divide_positive_numbers() ....... Tests 10/2=5, 9/3=3, 100/4=25
+  test_divide_negative_numbers() ....... Tests -10/2=-5, -20/-4=5, 10/-2=-5
+  test_divide_by_zero() ................ Tests ValueError when dividing by 0
+  test_divide_floats() ................. Tests 7/2=3.5, 1/3≈0.333
+
+All tests use pytest framework for assertions and exceptions.
+
+================================================================================
+ALTERNATIVE: AUTOMATIC SETUP
+================================================================================
+
+You don't need to run a script manually if you prefer.
+
+Just run:  pytest
+
+This will:
+  1. Load conftest.py
+  2. Import test_init.py
+  3. Automatically create test structure
+  4. Run all tests in tests/ directory
+
+The tests will be created automatically in this process.
+
+================================================================================
+TROUBLESHOOTING
+================================================================================
+
+If "py" command doesn't work:
+  Try: python final_test_setup.py
+  Or:  python3 final_test_setup.py
+
+If Python is not installed:
+  Download from: https://www.python.org/downloads/
+
+If you want to verify without running tests:
+  py verify_setup.py
+
+If you need to clear and re-create tests:
+  1. Delete D:\calculator\calculator\tests folder
+  2. Run the setup script again
+
+================================================================================
+FILE REFERENCE
+================================================================================
+
+D:\calculator\calculator\
+  ├── calculator.py ..................... Main module (add, subtract, etc)
+  ├── final_test_setup.py .............. Main setup script ← USE THIS
+  ├── setup_minimal.py ................. Minimal alternative
+  ├── execute_final_setup.py ........... Alternative execution
+  ├── test_init.py ..................... Auto-init module
+  ├── conftest.py (UPDATED) ........... Pytest configuration
+  ├── verify_setup.py .................. Verification script
+  │
+  └── tests/ (will be created)
+      ├── __init__.py .................. Package marker
+      └── test_calculator.py ........... Test file
+
+================================================================================
